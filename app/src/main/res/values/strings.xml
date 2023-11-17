@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">EnvironmentalThreatsFirebase</string>
+    <string name="app_name">Ameaças ambientais</string>
+    <string name="addThreatButton">Nova Ameaça</string>
+    <string name="threatsListHeader">Ameaças Cadastradas</string>
+    <string name="addressTextHeader">Endereço</string>
+    <string name="dateTextHeader">Data</string>
+    <string name="descriptionTextHeader">Descrição</string>
+    <string name="createThreatButton">Adicionar</string>
+    <string name="editThreatButton">Atualizar</string>
 </resources>
