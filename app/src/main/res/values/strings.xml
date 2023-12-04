@@ -7,4 +7,5 @@
     <string name="descriptionTextHeader">Descrição</string>
     <string name="createThreatButton">Adicionar</string>
     <string name="editThreatButton">Atualizar</string>
+    <string name="addImageButton">Tirar foto</string>
 </resources>
