@@ -13,6 +13,9 @@
         android:theme="@style/Theme.EnvironmentalThreatsFirebase"
         tools:targetApi="31">
         <activity
+            android:name=".EditThreat"
+            android:exported="false" />
+        <activity
             android:name=".AddThreat"
             android:exported="false" />
         <activity
