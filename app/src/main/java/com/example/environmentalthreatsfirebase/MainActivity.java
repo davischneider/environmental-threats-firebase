@@ -57,19 +57,16 @@ public class MainActivity extends AppCompatActivity {
         };
 
         threatsList.setAdapter(listAdapter);
-        threatsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                return false;
-            }
+        threatsList.setOnItemLongClickListener((parent, view, position, id) -> {
+            DatabaseReference item = listAdapter.getRef(position);
+            item.removeValue();
+
+            return false;
         });
 
-        threatsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                DatabaseReference item = listAdapter.getRef(position);
-                changeToUpdate(item.getKey(), listAdapter.getItem(position));
-            }
+        threatsList.setOnItemClickListener((parent, view, position, id) -> {
+            DatabaseReference item = listAdapter.getRef(position);
+            changeToUpdate(item.getKey(), listAdapter.getItem(position));
         });
 
         listAdapter.startListening();
@@ -83,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     public void changeToUpdate(String key, EnvironmentalThreat t){
         Intent it = new Intent(getBaseContext(), EditThreat.class);
         it.putExtra("KEY", key);
-        it.putExtra("THR", (CharSequence) t);
+        it.putExtra("THR", t);
         startActivity(it);
     }
 }

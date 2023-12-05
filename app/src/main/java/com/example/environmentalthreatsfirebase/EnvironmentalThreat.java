@@ -1,6 +1,10 @@
 package com.example.environmentalthreatsfirebase;
 
-public class EnvironmentalThreat {
+import androidx.annotation.NonNull;
+
+import java.io.Serializable;
+
+public class EnvironmentalThreat implements Serializable {
     private long id;
     private String address;
     private String date;
@@ -47,14 +51,9 @@ public class EnvironmentalThreat {
         this.image = image;
     }
 
+    @NonNull
     @Override
     public String toString() {
-        return "EnvironmentalThreat{" +
-                "id=" + id +
-                ", address='" + address + '\'' +
-                ", date='" + date + '\'' +
-                ", description='" + description + '\'' +
-                ", image='" + image + '\'' +
-                '}';
+        return address + " " + description + " " + date;
     }
 }
