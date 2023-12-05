@@ -9,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -43,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
         listAdapter = new FirebaseListAdapter<EnvironmentalThreat>(options) {
             @Override
             protected void populateView(@NonNull View v, @NonNull EnvironmentalThreat model, int position) {
-                TextView descriptionItemText = v.findViewById(R.id.descriptionItemText);
+                TextView addressItemText = v.findViewById(R.id.addressItemText);
                 TextView dateItemText =  v.findViewById(R.id.dateItemText);
                 ImageView imageItem = v.findViewById(R.id.imageItem);
-                descriptionItemText.setText(model.getDescription());
+                addressItemText.setText(model.getAddress());
                 dateItemText.setText(model.getDate());
                 if (model.getImage() != null) {
                     byte imageData[] = Base64.decode(model.getImage(), Base64.DEFAULT);
